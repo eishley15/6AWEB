@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f5f7fb;
+  color: #2d2d2d;
+  line-height: 1.7;
+  padding: 40px 0;
+}
+
+/* ============ CONTAINER STRUCTURE ============ */
+.cv-container {
+  max-width: 900px;
+  background: #ffffff;
+  margin: 30px auto;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.divider {
+  height: 1px;
+  background: #dcdce0;
+  margin: 25px 0;
+}
+
+/* ============ HEADER SECTION ============ */
+.cv-header {
+  text-align: center;
+}
+
+.name {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.contact-item strong {
+  color: #1a73e8;
+}
+
+.contact-info a {
+  color: #1a73e8;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* ============ SECTION TITLES ============ */
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  padding-left: 6px;
+  border-left: 5px solid #1a73e8;
+}
+
+/* ============ PARAGRAPH TEXT ============ */
+.profile-text {
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+  color: #3d3d3d;
+}
+
+.profile-text strong {
+  color: #1a73e8;
+}
+
+/* ============ LIST STYLING ============ */
+.profile-section ul {
+  margin: 10px 0 25px 30px;
+}
+
+.profile-section ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  position: relative;
+  padding-left: 8px;
+}
+
+.profile-section ul li::before {
+  content: "•";
+  color: #1a73e8;
+  font-weight: bold;
+  margin-right: 8px;
+  position: absolute;
+  left: -12px;
+  top: 0;
+}
+
+/* ============ FOOTER / END SPACING ============ */
+.cv-content {
+  margin-top: 10px;
+}
+

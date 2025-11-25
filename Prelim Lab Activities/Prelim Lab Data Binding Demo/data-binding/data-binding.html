@@ -1,0 +1,42 @@
+<div class="container">
+    <header>
+      <h1>{{title}}</h1>
+      <h3>{{description}}</h3>
+    </header>
+
+    <section class="image-section">
+      <img [src]="imageUrl" [width]='w' [height]='h' [alt]="altText">
+    </section>
+
+    <section class="name-input-section">
+      <input [(ngModel)]="yourName" placeholder="Enter Your Name">
+      <p>Hello, <span [style.color]="textColor">{{ yourName }}</span></p>
+    </section>
+
+    <section class="counter-section">
+      <button (click)="increment()"><img [src]="heartUrl" width="25" height="25" alt="heart icon"></button>
+      <button (click)="decrement()"><img [src]="notheartUrl" width="25" height="25" alt="not heart icon"></button>
+      <p>Hearts: {{ count }}</p>
+    </section>
+
+<!-- Interpolation -->
+    <h1>{{studentName}}</h1>
+
+
+    <section>
+      <h2>Property Binding</h2>
+      <img [src]="imageUrl2" width="200">
+      <br><br>
+      <button [disabled]="isDisabled">Submit</button>
+    </section>
+
+    <section>
+      <h2>Class Binding</h2>
+      <p [class.passing]="isPassing" [class.failing]="!isPassing">Student Result: {{ isPassing ? 'Passed' : ' Failed'}} </p>
+    </section>
+
+    <section>
+      <h2>Style Binding</h2>
+      <div [style.background]="boxColor" [style.width]="boxSize" [style.height]="boxSize" class="box"></div>
+    </section>
+  </div>
