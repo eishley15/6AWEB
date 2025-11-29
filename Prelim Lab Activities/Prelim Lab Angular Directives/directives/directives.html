@@ -1,0 +1,131 @@
+<div class="cv-container">
+      <table class="directive-table">
+        <tr>
+          <td>
+            @if(isStaticNoteVisible===true) {
+              <p class="result-text">This is a static note with true value!</p>
+            } @else {
+              <p class="result-text">This is a static note with false value.</p>
+            }
+          </td>
+        </tr>
+      </table>
+</div>
+
+<div class="cv-container">
+      <table class="directive-table">
+        <tr>
+          <td class="output-cell">
+            @if (isNoteVisible===true) {
+              <p class="result-text">This is a note!</p>
+            }
+          </td>
+          <td class="button-cell">
+            <button class="btn-primary" (click)="showNote()">Show Note</button>
+          </td>
+          <td class="button-cell">
+            <button class="btn-secondary" (click)="hideNote()">Hide Note</button>
+          </td>
+        </tr>
+      </table>
+</div>
+
+<div class="cv-container">
+      <table class="directive-table">
+        <tr>
+          <td>
+            <button class="btn-toggle" (click)="toggleNote()">
+              {{ isParagraphVisible ? 'Hide' : 'Show' }}
+            </button>
+            @if (isParagraphVisible) {
+              <p class="result-text toggle-content">This is the paragraph content.</p>
+            }
+          </td>
+        </tr>
+      </table>
+</div>
+
+<div class="cv-container">
+      <table class="directive-table">
+        <tr>
+          <td>
+            @if(monthNameStatic == 'Jan') {
+              <p class="result-text">January</p>
+            }
+            @else if(monthNameStatic == 'Feb') {
+              <p class="result-text">February</p>
+            }
+            @else if(monthNameStatic == 'Mar') {
+              <p class="result-text">March</p>
+            }
+          </td>
+        </tr>
+      </table>
+</div>
+
+<div class="cv-container">
+      <table class="directive-table">
+        <tr>
+          <td class="input-cell">
+            @if(monthNameDynamic == 'Jan') {
+              <p class="result-text">January</p>
+            }
+            @else if(monthNameDynamic == 'Feb') {
+              <p class="result-text">February</p>
+            }
+            @else if(monthNameDynamic == 'Mar') {
+              <p class="result-text">March</p>
+            }
+            @else {
+              <p class="result-text error">Wrong input!</p>
+            }
+          </td>
+          <td class="input-cell">
+            <input type="text" class="text-input" [(ngModel)]="monthNameDynamic">
+          </td>
+        </tr>
+      </table>
+</div>
+
+<div class="cv-container">
+      <table class="directive-table">
+        <tr>
+          <td>
+            <ul class="city-list">
+              @for (item of cityList; track $index) {
+                <li class="city-item">{{item}}</li>
+              }
+            </ul>
+          </td>
+        </tr>
+      </table>
+</div>
+
+<div class="cv-container">
+      <table class="student-table">
+        <thead>
+          <tr>
+            <th>Student No</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of studentList; track $index) {
+            <tr>
+              <td>{{$index+1}}</td>
+              <td>{{item.stud_name}}</td>
+              <td>{{item.course}}</td>
+              <td>
+                @if (item.isActive == true) {
+                  <span class="badge badge-active">Active</span>
+                } @else {
+                  <span class="badge badge-inactive">Inactive</span>
+                }
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+</div>

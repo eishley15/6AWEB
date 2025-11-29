@@ -1,0 +1,258 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f5f7fb;
+  color: #2d2d2d;
+  line-height: 1.7;
+  padding: 40px 0;
+}
+
+/* ============ CONTAINER STRUCTURE ============ */
+.cv-container {
+  max-width: 900px;
+  background: #ffffff;
+  margin: 30px auto;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ============ DIRECTIVE TABLES ============ */
+.directive-table {
+  width: 100%;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+.directive-table tr {
+  border-bottom: none;
+}
+
+.directive-table td {
+  padding: 25px;
+  vertical-align: middle;
+}
+
+.directive-table .output-cell {
+  width: 50%;
+  min-height: 50px;
+}
+
+.directive-table .button-cell {
+  width: 25%;
+  text-align: center;
+}
+
+.directive-table .input-cell {
+  width: 50%;
+  padding: 20px 25px;
+}
+
+.result-text {
+  font-size: 1.05rem;
+  color: #3d3d3d;
+  padding: 12px;
+  background: white;
+  border-radius: 6px;
+  border-left: 4px solid #1a73e8;
+  margin-bottom: 10px;
+}
+
+.result-text.error {
+  border-left-color: #dc3545;
+  color: #dc3545;
+}
+
+.toggle-content {
+  margin-top: 15px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============ BUTTONS ============ */
+
+.btn-primary,
+.btn-secondary,
+.btn-toggle {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary {
+  background: #1a73e8;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1557b0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #545b62;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+}
+
+.btn-toggle {
+  background: #28a745;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.btn-toggle:hover {
+  background: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+/* ============ INPUT FIELDS ============ */
+
+.input-cell {
+  display: block;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.text-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e6ed;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+.text-input::placeholder {
+  color: #adb5bd;
+}
+
+/* ============ CITY LIST ============ */
+.city-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.city-item {
+  padding: 12px 15px;
+  margin: 8px 0;
+  background: white;
+  border-radius: 6px;
+  border-left: 4px solid #1a73e8;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  color: #3d3d3d;
+}
+
+.city-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ============ STUDENT TABLE ============ */
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.student-table thead {
+  background: #1a73e8;
+}
+
+.student-table thead tr th {
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  padding: 15px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.student-table tbody tr {
+  border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.2s ease;
+}
+
+.student-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.student-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.student-table tbody td {
+  padding: 15px;
+  font-size: 0.95rem;
+  color: #3d3d3d;
+}
+
+/* ============ BADGES ============ */
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.badge-active {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.badge-inactive {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
