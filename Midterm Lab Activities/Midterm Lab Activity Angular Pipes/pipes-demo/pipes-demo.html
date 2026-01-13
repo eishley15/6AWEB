@@ -1,0 +1,74 @@
+<div class="page-container">
+
+  <div class="header-section">
+    <h1 class="page-title">Angular Pipes</h1>
+    <p class="current-date">
+      Today's date : - {{ presentDate | date }}
+    </p>
+  </div>
+
+  <div class="card">
+    <h3 class="section-title">Date Pipe</h3>
+    <p>This is a short date :- {{ presentDate | date: 'shortDate' }}</p>
+    <p>This line shows the full date :- {{ presentDate | date:'fullDate' }}</p>
+    <p>This will show a formatted date :- {{ presentDate | date:'M/dd/yyyy' }}</p>
+    <p>This indicates the hours and minutes :- {{ presentDate | date:'h:mm' }}</p>
+    <p class="author-name">Kyle Payawal</p>
+  </div>
+
+  <div class="card">
+    <h3 class="section-title">Chained Pipes</h3>
+    <p>Date with uppercase :- {{ presentDate | date:'fullDate' | uppercase }}</p>
+    <p>Date with lowercase :- {{ presentDate | date:'medium' | lowercase }}</p>
+  </div>
+
+  <div class="card">
+    <h3 class="section-title">Currency Pipe</h3>
+    <p class="highlight">{{ price | currency:'':true }}</p>
+    <p class="highlight">{{ price | currency:'INR' }}</p>
+    <p class="highlight">{{ price | currency:'PHP' }}</p>
+  </div>
+
+  <div class="card">
+    <h3 class="section-title">Slice Pipe</h3>
+    <h4 class="code-text">Start index:- {{ Fruits | slice:2 }}</h4>
+    <h4 class="code-text">Start and end index:- {{ Fruits | slice:1:4 }}</h4>
+    <h4 class="code-text">Negative index:- {{ Fruits | slice:-2 }}</h4>
+    <h4 class="code-text">Negative start and end index:- {{ Fruits | slice:-4:-2 }}</h4>
+  </div>
+
+  <div class="card">
+    <h3 class="section-title">Decimal Pipe</h3>
+    <p>{{ decimalNum1 | number }}</p>
+    <p>{{ decimalNum2 | number }}</p>
+  </div>
+
+  <div class="card">
+    <h3 class="section-title">AsyncPipe</h3>
+    <p class="live-time">
+      Seconds changing in Time:
+      {{ time$ | async | date:'mediumTime' }}
+    </p>
+  </div>
+
+  <div class="card">
+    <h3 class="section-title">Key Value Pipe</h3>
+    <div class="list">
+      @for (item of staff | keyvalue; track item.key) {
+        <div class="list-item">{{ item.key }}. {{ item.value }}</div>
+      }
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="section-title">Percent Pipe</h3>
+    <p>Worked Done: {{ accomplishedWork | percent }}</p>
+    <p>Repeating Client: {{ repeatingClients | percent }}</p>
+  </div>
+
+  <div class="card">
+    <h3 class="section-title">I18nSelectPipe</h3>
+    <p class="status-text">{{ log | i18nSelect: logMap }}</p>
+  </div>
+
+</div>
