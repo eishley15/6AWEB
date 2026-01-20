@@ -1,0 +1,76 @@
+/* Page layout */
+.page-container {
+  padding: 24px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #f9fafb;
+}
+
+/* Section titles */
+.section-title {
+  margin: 32px 0 12px;
+  color: #1f2937;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Table wrapper */
+.table-container {
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+/* Header */
+.data-table thead {
+  background-color: #2563eb;
+}
+
+.data-table th {
+  padding: 12px 14px;
+  text-align: left;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Body cells */
+.data-table td {
+  padding: 12px 14px;
+  font-size: 14px;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Row hover effect */
+.data-table tbody tr:hover {
+  background-color: #f1f5f9;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Price column */
+.data-table td.price {
+  font-weight: 600;
+  color: #047857;
+}
+
+/* Responsive text */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 18px;
+  }
+
+  .data-table th,
+  .data-table td {
+    font-size: 13px;
+  }
+}
