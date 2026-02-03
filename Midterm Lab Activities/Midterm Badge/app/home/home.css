@@ -1,0 +1,201 @@
+/* Import Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+/* Reset + base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+  color: #0e2431;
+  line-height: 1.6;
+  padding-top: 100px; /* space for navbar if fixed */
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 16px;
+}
+
+/* Main container */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Headings */
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #4070f4;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 500;
+  color: #333;
+  margin: 40px 0 15px 0;
+  text-align: left;
+}
+
+/* Paragraphs */
+p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 40px auto;
+  max-width: 900px;
+}
+
+ul li {
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ul li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+ul li strong {
+  font-weight: 600;
+  color: #4070f4;
+  font-size: 20px;
+}
+
+ul li span {
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #666;
+}
+
+/* Forms */
+form {
+  max-width: 600px;
+  background-color: #fff;
+  padding: 30px 35px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  margin: 0 auto 40px auto;
+}
+
+form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #4070f4;
+}
+
+form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+form button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #4070f4;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+  background-color: #3055c2;
+  transform: translateY(-2px);
+}
+
+/* Preview */
+div.preview {
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  padding: 20px 25px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+}
+
+div.preview h2 {
+  margin-bottom: 15px;
+  color: #4070f4;
+}
+
+div.preview p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+div.preview strong {
+  color: #4070f4;
+}
+
+/* Horizontal rule */
+hr {
+  border: none;
+  border-top: 2px solid #4070f4;
+  margin: 40px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    padding: 80px 15px 20px 15px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  ul li {
+    padding: 20px;
+  }
+
+  form, .preview {
+    padding: 25px;
+  }
+}

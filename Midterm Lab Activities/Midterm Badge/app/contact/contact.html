@@ -1,0 +1,27 @@
+<div class="contact-wrapper">
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <label>
+      Name:
+      <input type="text" formControlName="name" placeholder="Enter your name" />
+    </label>
+
+    <label>
+      Email:
+      <input type="email" formControlName="email" placeholder="Enter your email" />
+    </label>
+
+    <label>
+      Message:
+      <textarea formControlName="message" placeholder="Enter your message"></textarea>
+    </label>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div class="preview">
+    <h2>Form Preview</h2>
+    <p><strong>Name:</strong> {{ contactForm.value.name | uppercase }}</p>
+    <p><strong>Email:</strong> {{ contactForm.value.email }}</p>
+    <p><strong>Message:</strong> {{ contactForm.value.message }}</p>
+  </div>
+</div>
