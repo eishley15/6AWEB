@@ -1,0 +1,115 @@
+<div class="form-container">
+  <!-- Form Box -->
+  <form #myForm="ngForm" (ngSubmit)="onSubmit()" novalidate class="form-box">
+    <h2>Template Form</h2>
+
+    <!-- Username -->
+    <label for="username">Username:</label>
+    <input type="text" class="input-box"
+           id="username"
+           name="username"
+           [(ngModel)]="username"
+           placeholder="Enter username"
+           required
+           pattern="[a-zA-Z0-9_]{4,12}"
+           #usernameCtrl="ngModel">
+    <div class="error" *ngIf="usernameCtrl.invalid && usernameCtrl.touched">
+      <div *ngIf="usernameCtrl.errors?.['required']">Username is required</div>
+      <div *ngIf="usernameCtrl.errors?.['pattern']">4–12 chars: letters, numbers, _</div>
+    </div>
+
+    <!-- Email -->
+    <label for="email">Email:</label>
+    <input type="email" class="input-box"
+           id="email"
+           name="email"
+           [(ngModel)]="email"
+           placeholder="Enter email"
+           required
+           email
+           #emailCtrl="ngModel">
+    <div class="error" *ngIf="emailCtrl.invalid && emailCtrl.touched">
+      <div *ngIf="emailCtrl.errors?.['required']">Email is required</div>
+      <div *ngIf="emailCtrl.errors?.['email']">Enter a valid email</div>
+    </div>
+
+    <!-- Password -->
+    <label for="password">Password:</label>
+    <input type="password" class="input-box"
+           id="password"
+           name="password"
+           [(ngModel)]="password"
+           placeholder="Enter password"
+           required
+           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"
+           #passwordCtrl="ngModel">
+    <div class="error" *ngIf="passwordCtrl.invalid && passwordCtrl.touched">
+      <div *ngIf="passwordCtrl.errors?.['required']">Password is required</div>
+      <div *ngIf="passwordCtrl.errors?.['pattern']">
+        Password must be 8+ chars, with uppercase, lowercase, and number
+      </div>
+    </div>
+
+    <!-- Role -->
+    <label for="role">Role:</label>
+    <select name="role" class="input-box"
+            [(ngModel)]="role"
+            required
+            #roleCtrl="ngModel">
+      <option value="" disabled selected>Select Role</option>
+      <option value="admin">Admin</option>
+      <option value="user">User</option>
+      <option value="guest">Guest</option>
+    </select>
+    <div class="error" *ngIf="roleCtrl.invalid && roleCtrl.touched">
+      Role is required
+    </div>
+
+    <!-- Gender -->
+    <label>Gender:</label>
+    <div class="radio-group">
+      <label class="radio-label">
+        <input type="radio" name="gender" value="male" [(ngModel)]="gender" required #genderCtrl="ngModel"> Male
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="gender" value="female" [(ngModel)]="gender"> Female
+      </label>
+    </div>
+    <div class="error" *ngIf="genderCtrl.invalid && genderCtrl.touched">
+      Gender is required
+    </div>
+
+    <!-- Status -->
+    <label>Status:</label>
+    <div class="radio-group">
+      <label class="radio-label">
+        <input type="radio" name="status" value="permanent" [(ngModel)]="status" required #statusCtrl="ngModel"> Permanent
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="status" value="probationary" [(ngModel)]="status"> Probationary
+      </label>
+    </div>
+    <div class="error" *ngIf="statusCtrl.invalid && statusCtrl.touched">
+      Status is required
+    </div>
+
+    <!-- Comments -->
+    <label>Comments:</label>
+    <textarea class="input-box" name="comments" [(ngModel)]="comments" rows="4" placeholder="Enter notes..."></textarea>
+
+    <!-- Submit -->
+    <input type="submit" class="btn" value="Submit" [disabled]="myForm.invalid">
+
+  </form>
+
+  <!-- Submitted Info -->
+  <div *ngIf="submitted && submittedData" class="result-box">
+    <h3>Submitted Information</h3>
+    <p><strong>Username:</strong> {{ submittedData.username }}</p>
+    <p><strong>Email:</strong> {{ submittedData.email }}</p>
+    <p><strong>Role:</strong> {{ submittedData.role }}</p>
+    <p><strong>Gender:</strong> {{ submittedData.gender }}</p>
+    <p><strong>Status:</strong> {{ submittedData.status }}</p>
+    <p><strong>Comments:</strong> {{ submittedData.comments }}</p>
+  </div>
+</div>
